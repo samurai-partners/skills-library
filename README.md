@@ -35,6 +35,10 @@ Claude は Skills に従ってデータを取得・分析し、統一された�
 
 ## スキル一覧
 
+### YouTube 分析 (自社開発)
+
+MCP Server と連携して YouTube データを分析するスキル。
+
 | スキル | 説明 | 主な用途 |
 |---|---|---|
 | [comment-analysis](./skills/comment-analysis/) | コメントの感情・テーマ・要望を分析 | 視聴者の声の把握、改善点の発見 |
@@ -42,6 +46,26 @@ Claude は Skills に従ってデータを取得・分析し、統一された�
 | [channel-comparison](./skills/channel-comparison/) | チャンネル間の横断比較 | 競合分析、自社チャンネルのポジショニング |
 | [content-strategy](./skills/content-strategy/) | データに基づくコンテンツ戦略の策定 | 次の動画企画、投稿スケジュール最適化 |
 | [trend-detection](./skills/trend-detection/) | 再生数・エンゲージメントのトレンド検出 | 異常検知、成長チャンネルの早期発見 |
+
+### 開発ツール (Anthropic 公式)
+
+[anthropics/skills](https://github.com/anthropics/skills) および [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) から取得。
+
+| スキル | 説明 | ソース |
+|---|---|---|
+| [skill-creator](./skills/skill-creator/) | 新しいスキルの作成ガイド + 初期化スクリプト | anthropics/skills |
+| [mcp-builder](./skills/mcp-builder/) | MCP サーバー構築ガイド (Node.js / Python) | anthropics/skills |
+| [code-review](./skills/code-review/) | 5エージェント並列 PR レビュー | claude-plugins-official |
+| [pr-review-toolkit](./skills/pr-review-toolkit/) | 6専門エージェントによる包括的 PR レビュー | claude-plugins-official |
+
+### ドキュメント処理 (Anthropic 公式)
+
+| スキル | 説明 | ソース |
+|---|---|---|
+| [xlsx](./skills/xlsx/) | スプレッドシート作成・編集・分析 | anthropics/skills |
+| [pdf](./skills/pdf/) | PDF 結合・分割・抽出・フォーム入力 | anthropics/skills |
+| [docx](./skills/docx/) | Word ドキュメント作成・XML 操作 | anthropics/skills |
+| [pptx](./skills/pptx/) | プレゼンテーション作成・編集 | anthropics/skills |
 
 ## セットアップ
 
