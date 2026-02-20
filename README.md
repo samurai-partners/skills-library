@@ -51,21 +51,21 @@ MCP Server と連携して YouTube データを分析するスキル。
 
 [anthropics/skills](https://github.com/anthropics/skills) および [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) から取得。
 
-| スキル | 説明 | ソース |
+| スキル | 説明 | できること |
 |---|---|---|
-| [skill-creator](./skills/skill-creator/) | 新しいスキルの作成ガイド + 初期化スクリプト | anthropics/skills |
-| [mcp-builder](./skills/mcp-builder/) | MCP サーバー構築ガイド (Node.js / Python) | anthropics/skills |
-| [code-review](./skills/code-review/) | 5エージェント並列 PR レビュー | claude-plugins-official |
-| [pr-review-toolkit](./skills/pr-review-toolkit/) | 6専門エージェントによる包括的 PR レビュー | claude-plugins-official |
+| [skill-creator](./skills/skill-creator/) | スキル作成支援 | 「新しいスキルを作りたい」と言うと、SKILL.md の雛形生成・ベストプラクティスに沿った構成・バリデーションまで自動で行う。初期化スクリプト付き |
+| [mcp-builder](./skills/mcp-builder/) | MCP サーバー構築支援 | 「MCP サーバーを作りたい」と言うと、Node.js or Python でのMCPサーバー実装を公式ベストプラクティスに沿ってガイド。DB接続・API連携のテンプレート付き |
+| [code-review](./skills/code-review/) | コードレビュー自動化 | `/code-review` で PR の差分を5つの専門エージェント (バグ検出・セキュリティ・パフォーマンス・可読性・テスト) が並列レビューし、信頼度スコア付きでレポート |
+| [pr-review-toolkit](./skills/pr-review-toolkit/) | PR レビュー総合ツール | `/review-pr` で6つの専門エージェント (CLAUDE.md準拠チェック・コード簡素化・コメント精度・テストカバレッジ・サイレント障害検出・型設計) が包括レビュー |
 
 ### ドキュメント処理 (Anthropic 公式)
 
-| スキル | 説明 | ソース |
+| スキル | 説明 | できること |
 |---|---|---|
-| [xlsx](./skills/xlsx/) | スプレッドシート作成・編集・分析 | anthropics/skills |
-| [pdf](./skills/pdf/) | PDF 結合・分割・抽出・フォーム入力 | anthropics/skills |
-| [docx](./skills/docx/) | Word ドキュメント作成・XML 操作 | anthropics/skills |
-| [pptx](./skills/pptx/) | プレゼンテーション作成・編集 | anthropics/skills |
+| [xlsx](./skills/xlsx/) | Excel 操作 | スプレッドシートの新規作成・既存ファイルの編集・データ分析・グラフ生成。openpyxl / SheetJS を活用 |
+| [pdf](./skills/pdf/) | PDF 操作 | PDF の結合・分割・ページ抽出・テキスト抽出・フォーム入力 (入力可能/不可能なフォーム両対応)。pypdfium2 / pdf-lib 等を活用 |
+| [docx](./skills/docx/) | Word 操作 | Word 文書の新規作成・既存ファイルの編集・スタイル適用・表/画像挿入。python-docx / XML直接操作に対応 |
+| [pptx](./skills/pptx/) | PowerPoint 操作 | プレゼンの新規作成 (PptxGenJS) ・既存テンプレートの編集 (XML展開方式)。レイアウト・デザイン提案機能付き |
 
 ## セットアップ
 
