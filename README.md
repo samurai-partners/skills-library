@@ -5,16 +5,34 @@ MCP Server で取得したデータに対して、会社として統一された
 
 ## コンセプト
 
-```
-┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  MCP Server       │     │  Skills           │     │  Claude AI        │
-│  = データ取得層    │────►│  = 分析・解釈定義  │────►│  = 実行・出力      │
-│                   │     │                   │     │                   │
-│  get_videos       │     │  comment-analysis │     │  レポート生成      │
-│  get_comments     │     │  video-performance│     │  戦略提案          │
-│  get_snapshots    │     │  channel-compare  │     │  トレンド検出      │
-│  get_analytics    │     │  content-strategy │     │                   │
-└──────────────────┘     └──────────────────┘     └──────────────────┘
+```mermaid
+graph LR
+    subgraph MCP["MCP Server<br/><i>データ取得層</i>"]
+        M1[get_videos]
+        M2[get_comments]
+        M3[get_snapshots]
+        M4[get_analytics]
+    end
+
+    subgraph Skills["Skills<br/><i>分析・解釈定義</i>"]
+        S1[comment-analysis]
+        S2[video-performance]
+        S3[channel-comparison]
+        S4[content-strategy]
+        S5[trend-detection]
+    end
+
+    subgraph Claude["Claude AI<br/><i>実行・出力</i>"]
+        C1[レポート生成]
+        C2[戦略提案]
+        C3[トレンド検出]
+    end
+
+    MCP -->|データ| Skills -->|分析指示| Claude
+
+    style MCP fill:#e8f4fd,stroke:#2196F3,color:#000
+    style Skills fill:#fff3e0,stroke:#FF9800,color:#000
+    style Claude fill:#e8f5e9,stroke:#4CAF50,color:#000
 ```
 
 **MCP** がデータの「何を取るか」を担い、**Skills** が「どう分析するか」を定義する。
